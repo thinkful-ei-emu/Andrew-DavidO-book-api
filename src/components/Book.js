@@ -6,7 +6,7 @@ function Book(props) {
       <p>{props.title}</p>
       <p>{props.authors}</p>
       <p>{props.kind}</p>
-      <p>{props.retailPrice}</p>
+      {props.saleInfo.retailPrice && <p>{props.saleInfo.retailPrice.amount}</p>}
       <img src={props.thumbnail} alt={`${props.title}-thumbnail`}></img>
       <p>{props.description}</p>
     </div>

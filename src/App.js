@@ -55,6 +55,7 @@ class App extends React.Component {
       });  
     } catch(e) {
       console.error(e.message);
+      
     }
   }
 
