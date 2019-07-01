@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q=';
+    this.BASE_URL = 'https://www.googleapis.com/books/v1/volumes?';
 
     this.state = {
       booklist: {
@@ -40,10 +40,12 @@ class App extends React.Component {
 
   fetchBooks = async (queryObj) => {
 
-    const query = this.mapQueryToString(queryObj)
+    const query = this.mapQueryToString(queryObj);
+
+    console.log('query', `${this.BASE_URL}${query}`);
 
     try {
-      let booklist = await fetch(`${this.BASE_URL}?${encodeURIComponent(query)}`);
+      let booklist = await fetch(`${this.BASE_URL}${(query)}`);
       booklist = await booklist.json();
 
       console.log(booklist);

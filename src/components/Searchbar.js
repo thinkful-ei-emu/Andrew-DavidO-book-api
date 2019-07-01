@@ -4,27 +4,29 @@ class Searchbar extends React.Component {
   
   formSubmit = (e) => {
     e.preventDefault();
-    const searchForm = e.target;
+    const searchForm = document.getElementById('searchForm');
     const queryObj = {};
 
     const formData = new FormData(searchForm);
 
     formData.forEach((value, key) => {
-      if (value) queryObj[key] = value;
+      if (value) {
+        queryObj[key] = value;
+      }
     });
 
-    console.log(queryObj);
     this.props.fetchBooks(queryObj);  
   
     searchForm.q.value = '';
   }
+  
   render() {
     return <>
-      <form className='searchForm' onSubmit={this.formSubmit}>
+      <form id='searchForm' className='searchForm' onSubmit={this.formSubmit}>
         <input name='q' type='text' placeholder='Book Title'></input>
         <input type='submit' value='Search'></input>
         <select name='printType'>
-          <option>All</option>
+          <option value='all'>All</option>
           <option value='books'>Books</option>
           <option value='magazines'>Magazines</option>
         </select>
