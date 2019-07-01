@@ -2,12 +2,13 @@ import React from 'react';
 
 function Book(props) {
   return <>
-    <div>{props.title}
-          {props.authors}
-          {props.kind}
-          {props.retailPrice}
-          {props.thumbnail}
-          {props.description}
+    <div>
+      <p>{props.title}</p>
+      <p>{props.authors}</p>
+      <p>{props.kind}</p>
+      <p>{props.retailPrice}</p>
+      <img src={props.thumbnail} alt={`${props.title}-thumbnail`}></img>
+      <p>{props.description}</p>
     </div>
   </>
 }

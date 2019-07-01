@@ -2,18 +2,18 @@ import React from 'react';
 import Book from './Book'
 
 function Booklist(props) {
+  const booklist = props.booklist.map(book => {
+    return <Book
+      key={book.id}
+      />
+  });
+
   return <>
     <div>Booklist
       <ul>
-        {
-          props.booklist.map(book => {
-          return <Book/>
-          })
-        }
+        {booklist}
       </ul>
     </div>
-
-
   </>
 }
 
