@@ -1,8 +1,14 @@
 import React from 'react';
 
-function Book() {
+function Book(props) {
   return <>
-    <div></div>
+    <div>{props.title}
+          {props.authors}
+          {props.kind}
+          {props.retailPrice}
+          {props.thumbnail}
+          {props.description}
+    </div>
   </>
 }
 

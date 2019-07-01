@@ -1,8 +1,19 @@
 import React from 'react';
+import Book from './Book'
 
-function Booklist() {
+function Booklist(props) {
   return <>
-    <div>Booklist</div>
+    <div>Booklist
+      <ul>
+        {
+          props.booklist.map(book => {
+          return <Book/>
+          })
+        }
+      </ul>
+    </div>
+
+
   </>
 }
 
